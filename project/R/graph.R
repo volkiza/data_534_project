@@ -28,6 +28,8 @@ airport_location <- function(airport = "YVR"){
 }
 
 
+# The airport_location function is designed to graph a world map and spot the aiport location.
+
 # lounge_location <- function(airport = "YVR", company = "LH"){
 #   
 #   
