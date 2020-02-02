@@ -9,7 +9,7 @@ library(tidyr)
 library(stringr)
 library(purrr)
 
-lounges<-function(airport = "YVR", company = "LH", locaction = "", cabine=""){
+lounges<-function(airport = "YVR", company = "LH", locaction = "", cabine="",write="N"){
   json_file<-getApi(apCode = airport, ac = company, loc = locaction, cab=cabine)
   data_raw<-enframe(unlist(json_file))
   rgx_split <- "\\."
@@ -52,6 +52,8 @@ lounges<-function(airport = "YVR", company = "LH", locaction = "", cabine=""){
   }
   data_raw<-(as.data.frame(data_raw))
   data_raw<-unique(data_raw%>%drop_na(lounge_name))
+  data_raw<-data.frame(data_raw)
+  if (write=="Y"){write.csv(data_raw, file = "my_data.csv")}
   return (data_raw)
 }
 
