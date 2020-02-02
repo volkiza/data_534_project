@@ -1,5 +1,6 @@
-install.packages("httr")
-install.packages("jsonlite")
+
+#install.packages("httr")
+#install.packages("jsonlite")
 library(dplyr)
 library(httr)
 library(jsonlite)
@@ -38,7 +39,7 @@ creds<-function(client_id, client_secret){
   creds <- list(token=token)
   return(creds)
 }
-Authorization <- function(t="ak585uahaecvg4uq3nyqjnsz"){
+Authorization <- function(t="ad2a5qmc8pupr8ktje4ardm7"){
   token <- t
   return( paste("Bearer", token) )
 }
