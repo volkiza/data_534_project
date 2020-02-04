@@ -36,7 +36,7 @@ creds<-function(client_id, client_secret){
   creds <- list(token=token)
   return(creds)
 }
-Authorization <- function(t="ad2a5qmc8pupr8ktje4ardm7"){
+Authorization <- function(t="74c6qc57633asctk2q6ggr9v"){
   token <- t
   return( paste("Bearer", token) )
 }

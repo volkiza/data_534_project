@@ -1,4 +1,4 @@
-source("lounge_df.R")
+#source("lounge_df.R")
 test_that("Check if function returns list", {
   lk<-c("airport_code","city_code","city","country_code","airline","lounge_name", "lounge_location" ,"opening_hours","smoking","shower" ,"relax_rooms", "magazines")
   colnames(lounges())  %>%

@@ -2,17 +2,15 @@ Package: mypkg
 Title: This package is an API wrapper for the Lufthansa Open API
 Version: 0.0.0.9000
 Authors@R: c(
-    person("Elizaveta", "Volkova", role = c("aut")),
-    person("Sharukh", "Alvi", role = c("aut", "trl", "cre")),
-    person("Jay", "Cho")
-    )
-
+    person(given="Elizaveta",family= "Volkova", role = c("aut")),
+    person(given="Sharukh", family="Alvi", role = c("aut", "trl", "cre"),email="email@google.com"),
+    person(given="Jay", family="Cho",role = c("aut")))
 Description: API wrapper for the Lufthansa Open API that allows user to select and download as csv file the availability of lounges in selected airport and also see the location of the airport on the map.
-
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: 
+Depends:
+    R (>= 2.10),
     dplyr,
     jsonlite,
     httr,
@@ -25,6 +23,13 @@ Imports:
     plyr,
     maps,
     mapdata,
-    MUCflights
+    MUCflights,
+    devtools,
+    tidyverse,
+    anytime
 Suggests: 
-    testthat (>= 2.1.0)
+    testthat (>= 2.1.0),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+

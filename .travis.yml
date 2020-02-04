@@ -1,0 +1,19 @@
+
+language: r
+before_install:
+  - R -e 'source("https://install-github.me/r-lib/remotes")'
+addons:
+  apt:
+    packages:
+      - libudunits2-dev
+      - libgdal-dev
+      - libgeos-dev
+      - libproj-dev
+os:
+    - linux
+r:
+    - release
+sudo: false
+cache: packages
+warnings_are_errors: false
+
