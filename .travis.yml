@@ -2,7 +2,7 @@
 language: r
 before_install:
   - R -e 'source("https://install-github.me/r-lib/remotes")'
-  - cd fireNASA
+  - cd mypkg
 addons:
   apt:
     packages:
