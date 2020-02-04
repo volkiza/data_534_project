@@ -1,0 +1,54 @@
+---
+title: "LufthansaR"
+date: "`r Sys.Date()`"
+output:
+  rmarkdown::html_vignette:
+    toc: true
+    keep_md: true
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+--- 
+
+
+## Introduction to LufthansaR
+
+`LufthansaR` is an API wrapper package for R. It enables programmers to access to [Lufthansa Open API](https://developer.lufthansa.com/docs) from R environment. 
+
+
+## Lufthansa Open API
+
+To have access to Lufthansa Open API, one has to sign in to Mashery, Lufthansa's developer platform, and apply for a key. Please visit [here](https://developer.lufthansa.com/docs/API_basics/). 
+
+
+<img src="../image/API_reg.png" alt="API registration page" style="width: auto;"/>
+
+
+## How to get API information from Lufthansa
+
+This `Authorization()` function will take a token and return it in a format that can be entered to authroize the user to use the Luthfanse API 
+
+```{r, eval=FALSE}
+author_token <- Authorization(verbose = TRUE)
+```
+
+This `getAPI()` function utilizes `httr` to parse the API data, which is then converted to JSON for better readibilty. The content is then return in a list format; for which the first item is airport data, the second is airline data, and the third is lounge data. You can then access the different attributes present in each list item to get the desired information 
+
+```{r, eval=FALSE}
+api_info <- getApi(apCode = "JFK", ac = "LH", loc = "", cab="M")
+
+# Airport information
+arp_info <- api_info[1]
+coordinates<-arp_info[[1]]$AirportResource$Airports$Airport$Position$Coordinate
+
+# Airline information
+arl_info <- api_info[2]
+full_name<-arl_info[[1]]$AirlineResource$Airlines$Airline$Names$Name$`$`
+
+# Lounge information
+lounge_info <- api_info[3]
+lounge_names<-lounge_info[[1]]$LoungeResource$Lounges$Lounge$Names
+```
+
+
