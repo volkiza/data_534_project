@@ -27,5 +27,11 @@ Imports:
     mapdata,
     MUCflights,
     devtools
+Depends:
+    httr,
+    jsonlite,
+    anytime
 Suggests: 
     testthat (>= 2.1.0)
+    knitr,
+    rmarkdown
