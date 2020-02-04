@@ -24,6 +24,7 @@ Depends:
     mapdata,
     MUCflights,
     devtools,
+    tidyverse,
     anytime
 Suggests: 
     testthat (>= 2.1.0),
