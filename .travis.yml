@@ -1,5 +1,7 @@
-before_install: R -e 'source("https://install-github.me/r-lib/remotes")'
 language: r
 sudo: false
 cache: packages
 warnings_are_errors: false
+jobs:
+  allow_failures:
+    - os: osx
