@@ -13,9 +13,11 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends:
+    dplyr,
     jsonlite,
     httr,
     tibble,
+    tidyr,
     stringr,
     purrr,
     ggplot2,
