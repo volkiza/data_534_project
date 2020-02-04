@@ -25,6 +25,7 @@ Imports:
     plyr,
     maps,
     mapdata,
-    MUCflights
+    MUCflights,
+    devtools
 Suggests: 
     testthat (>= 2.1.0)
