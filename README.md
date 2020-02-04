@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/volkiza/data_534_project.svg?branch=master)](https://travis-ci.org/volkiza/data_534_project)
+
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 
