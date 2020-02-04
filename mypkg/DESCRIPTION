@@ -1,13 +1,14 @@
 Package: mypkg
-Title: What the Package Does (One Line, Title Case)
+Title: This package is an API wrapper for the Lufthansa Open API
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Authors@R: c(
+    person("Elizaveta", "Volkova", role = c("aut")),
+    person("Sharukh", "Alvi", role = c("aut", "trl", "cre")),
+    person("Jay", "Cho")
+    )
+
+Description: API wrapper for the Lufthansa Open API that allows user to select and download as csv file the availability of lounges in selected airport and also see the location of the airport on the map.
+
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
