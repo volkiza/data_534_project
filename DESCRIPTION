@@ -12,7 +12,7 @@ Description: API wrapper for the Lufthansa Open API that allows user to select a
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: 
+Depends:
     dplyr,
     jsonlite,
     httr,
@@ -26,10 +26,7 @@ Imports:
     maps,
     mapdata,
     MUCflights,
-    devtools
-Depends:
-    httr,
-    jsonlite,
+    devtools,
     anytime
 Suggests: 
     testthat (>= 2.1.0)
