@@ -1,4 +1,4 @@
-source("getApi.r")
+
 
 test_that("Check if proper token authorization", {
   expect_type(Authorization(), 'character')
