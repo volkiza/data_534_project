@@ -67,7 +67,6 @@ print(lounge)
 lounge_df <- lounges(airport = "ZRH", company = "LH", write = 'N')
 print(lounge_df)
 ```
-![](/Users/elizaveta_volkova/Documents/MDS_GIT/Lectures_Labs/data_534_notes/data_534_project/vignettes/df.png){width=100%}
 
 
 ## How to get airport location map from Lufthansa
