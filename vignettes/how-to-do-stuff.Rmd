@@ -1,13 +1,19 @@
 ---
 title: "Lufthansa_Vignette"
 output:
+  pdf_document:
+    highlight: tango
+  html_document:
+    standalone: true
+    highlight: tango
+    self-contained: true
   rmarkdown::html_vignette:
     toc: true
     keep_md: true
 vignette: >
   %\VignetteIndexEntry{How to do stuff}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::multiformat}
 ---
 
 ```{r, include = FALSE}
