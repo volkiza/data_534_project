@@ -51,3 +51,4 @@ lounges<-function(airport = "YVR", company = "LH", locaction = "", cabine="",wri
   if (write=="Y"){write.csv(data_raw, file = "my_data.csv")}
   return (data_raw)
 }
+
