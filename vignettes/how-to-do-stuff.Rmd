@@ -58,7 +58,7 @@ lounge_names<-lounge_info[[1]]$LoungeResource$Lounges$Lounge$Names
 
 This `lounges()` function utilizes `getApi()` to access information based on user provided inputs and return Api information from Lufthansa, specifically on lounges, more readable and organized format. If 'write = Y", it will output the information into csv file, otherwise, it will return a dataframe of the organized information. 
 
-```{r, eval=TRUE}
+```{r, eval=FALSE}
 # Lounge information written to a csv file
 # lounge information for YVR flying with lufthansa
 lounge_csv <- lounges(write = 'Y')
@@ -66,10 +66,12 @@ lounge <- read_csv("my_data.csv")
 print(lounge)
 
 # Lounge information written to a dataframe
-# lounge information for JFK flying with lufthansa
-lounge_df <- lounges(airport = "JFK", company = "LH", write = 'N')
+# lounge information for ZRH flying with lufthansa
+lounge_df <- lounges(airport = "ZRH", company = "LH", write = 'N')
 print(lounge_df)
 ```
+![](/Users/elizaveta_volkova/Documents/MDS_GIT/Lectures_Labs/data_534_notes/data_534_project/vignettes/df.png){width=100%}
+
 
 ## How to get airport location map from Lufthansa
 
