@@ -1,6 +1,9 @@
 ---
-title: "How to do stuff"
-output: rmarkdown::html_vignette
+title: "Lufthansa_Vignette"
+output:
+  rmarkdown::html_vignette:
+    toc: true
+    keep_md: true
 vignette: >
   %\VignetteIndexEntry{How to do stuff}
   %\VignetteEngine{knitr::rmarkdown}
@@ -16,4 +19,68 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(mypkg)
+```
+## Introduction to LufthansaR
+
+`LufthansaR` is an API wrapper package for R. It enables programmers to access to [Lufthansa Open API](https://developer.lufthansa.com/docs) from R environment. 
+
+
+## Lufthansa Open API
+
+To have access to Lufthansa Open API, one has to sign in to Mashery, Lufthansa's developer platform, and apply for a key. Please visit [here](https://developer.lufthansa.com/docs/API_basics/). 
+
+
+## How to get API information from Lufthansa
+
+This `Authorization()` function will take a token and return it in a format that can be entered to authroize the user to use the Luthfanse API 
+
+```{r, eval=FALSE}
+author_token <- Authorization()
+```
+
+This `getAPI()` function utilizes `httr` to parse the API data, which is then converted to JSON for better readibilty. The content is then return in a list format; for which the first item is airport data, the second is airline data, and the third is lounge data. You can then access the different attributes present in each list item to get the desired information 
+
+```{r, eval=FALSE}
+api_info <- getApi(apCode = "JFK", ac = "LH", loc = "", cab="")
+# Airport information
+arp_info <- api_info[1]
+coordinates<-arp_info[[1]]$AirportResource$Airports$Airport$Position$Coordinate
+# Airline information
+arl_info <- api_info[2]
+full_name<-arl_info[[1]]$AirlineResource$Airlines$Airline$Names$Name$`$`
+
+# Lounge information
+lounge_info <- api_info[3]
+lounge_names<-lounge_info[[1]]$LoungeResource$Lounges$Lounge$Names
+```
+
+## How to get lounge information from Lufthansa
+
+This `lounges()` function utilizes `getApi()` to access information based on user provided inputs and return Api information from Lufthansa, specifically on lounges, more readable and organized format. If 'write = Y", it will output the information into csv file, otherwise, it will return a dataframe of the organized information. 
+
+```{r, eval=TRUE}
+# Lounge information written to a csv file
+# lounge information for YVR flying with lufthansa
+lounge_csv <- lounges(write = 'Y')
+lounge <- read_csv("my_data.csv")
+print(lounge)
+
+# Lounge information written to a dataframe
+# lounge information for JFK flying with lufthansa
+lounge_df <- lounges(airport = "JFK", company = "LH", write = 'N')
+print(lounge_df)
+```
+
+## How to get airport location map from Lufthansa
+
+This `airport_location()` function produces a visual map of the world in which input airport is shown by blue point. 
+
+```{r, fig.width=7.5, fig.height=5, fig.align="center", eval=TRUE}
+
+# Produces a map of JFK airport location 
+airmap_jfk <- airport_location(airport = "JFK")
+
+# Produces a map of ICN airport location 
+airmap_icn <- airport_location(airport = "ICN")
+
 ```
