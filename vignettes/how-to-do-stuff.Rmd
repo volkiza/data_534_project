@@ -73,7 +73,7 @@ print(lounge_df)
 
 This `airport_location()` function produces a visual map of the world in which input airport is shown by blue point. 
 
-```{r, fig.width=7.5, fig.height=5, fig.align="center", eval=TRUE}
+```{r, fig.width=7.5, fig.height=5, fig.align="center", eval=FALSE}
 # Produces a map of JFK airport location 
 airmap_jfk <- airport_location(airport = "JFK")
 # Produces a map of ICN airport location 
