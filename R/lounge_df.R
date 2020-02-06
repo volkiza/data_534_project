@@ -4,6 +4,8 @@ library(tidyr)
 library(stringr)
 library(purrr)
 
+#Function takes the list from getApi() and transforms the data into the dataframe with information about lounges in a current airport
+
 lounges<-function(airport = "YVR", company = "LH", locaction = "", cabine="",write="N"){
   json_file<-getApi(apCode = airport, ac = company, loc = locaction, cab=cabine)
   data_raw<-enframe(unlist(json_file))
