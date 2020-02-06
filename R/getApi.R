@@ -5,7 +5,7 @@ library(jsonlite)
 # Function takes in token and converts it into proper form for the website to authorize, to access the 
 #Lufthansa API
 
-Authorization <- function(t="qguqjjnebe4fv58x347ttaqt"){
+Authorization <- function(t="pe5qgn8ahus3dpz5fe95e8bq"){
   token <- t
   return( paste("Bearer", token) )
 }
